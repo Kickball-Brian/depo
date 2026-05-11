@@ -1,0 +1,17 @@
+{
+  "name": "depo-claim-center",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --serve --port=3502",
+    "dev": "eleventy --serve --port=3502",
+    "export": "rm -rf export && eleventy --output=export"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

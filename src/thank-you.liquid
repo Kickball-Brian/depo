@@ -1,0 +1,30 @@
+---
+layout: layouts/base.liquid
+pageHeading: "Thank You"
+title: "Thank You | Depo Claim Center"
+description: "Thanks for submitting your information — a member of our team will reach out shortly."
+pageUrl: "https://depoclaimcenter.com/thank-you/"
+canonicalUrl: "https://depoclaimcenter.com/thank-you/"
+permalink: "/thank-you/index.html"
+bodyClass: "is-utility"
+---
+<section class="utility-hero">
+  <div class="container">
+    <h1>{{ pageHeading }}</h1>
+  </div>
+</section>
+<section class="section section--padded">
+  <div class="container narrow">
+    <div class="thankyou-card">
+      <div class="thankyou-card_icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h2>Your Submission Has Been Received</h2>
+      <p>A member of our team will review your information and reach out to you shortly. There is no obligation and your consultation is completely free.</p>
+      <p>If you have any urgent questions, please call us directly:</p>
+      <a class="thankyou-phone" href="tel:+1{{ site.defaultPhone }}" data-dynamic-phone-tel>
+        <span data-dynamic-phone>{{ site.defaultPhoneFormatted }}</span>
+      </a>
+    </div>
+  </div>
+</section>

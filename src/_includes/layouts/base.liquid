@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% assign _t = title | default: site.name %}
+  {% assign _d = description | default: site.description %}
+  {% assign _img = pageOgImage | default: "images/og/default.png" %}
+  {% assign _url = pageUrl | default: site.productionUrl %}
+  {% assign _canonical = canonicalUrl | default: _url %}
+
+  <title>{{ _t }}</title>
+  <meta name="description" content="{{ _d }}">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="{{ _canonical }}">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1B2A6B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ _t }}">
+  <meta property="og:description" content="{{ _d }}">
+  <meta property="og:url" content="{{ _url }}">
+  <meta property="og:image" content="{{ site.productionUrl }}{{ _img }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ _t }}">
+  <meta name="twitter:description" content="{{ _d }}">
+  <meta name="twitter:image" content="{{ site.productionUrl }}{{ _img }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.name }}",
+    "url": "{{ site.productionUrl }}",
+    "description": "{{ site.description }}",
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LegalService"],
+    "name": "{{ site.name }}",
+    "url": "{{ site.productionUrl }}",
+    "email": "{{ site.email }}",
+    "telephone": "+1{{ site.defaultPhone }}",
+    "description": "{{ site.description }}",
+    "areaServed": { "@type": "Country", "name": "{{ site.areaServed }}" }
+  }
+  </script>
+
+  {% if pageSchema %}{{ pageSchema }}{% endif %}
+
+  {% if site.gtmId %}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-{{ site.gtmId }}');</script>
+  {% endif %}
+</head>
+<body class="page-wrapper {{ bodyClass }}">
+  {% if site.gtmId %}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{ site.gtmId }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  {% endif %}
+
+  {% include "partials/navbar.liquid" %}
+  <main class="main-wrapper">
+    {{ content }}
+  </main>
+  {% include "partials/footer.liquid" %}
+
+  <script src="/phone-config.js"></script>
+  <script src="/js/vue.global.prod.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

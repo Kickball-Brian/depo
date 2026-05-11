@@ -1,0 +1,10 @@
+{
+  "name": "Depo Claim Center",
+  "short_name": "DepoClaimCenter",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#1B2A6B",
+  "background_color": "#0B1D3A",
+  "display": "standalone"
+}

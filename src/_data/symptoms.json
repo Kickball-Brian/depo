@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Persistent Headaches",
+    "body": "Worsening headaches that don't respond to typical pain medication — often most severe in the morning or after lying down.",
+    "icon": "head"
+  },
+  {
+    "title": "Vision Changes",
+    "body": "Blurred or double vision, loss of peripheral vision, or other unexplained visual disturbances.",
+    "icon": "eye"
+  },
+  {
+    "title": "Hearing Loss",
+    "body": "Progressive or sudden hearing loss, tinnitus (ringing in the ears), or a feeling of fullness in the ears.",
+    "icon": "ear"
+  },
+  {
+    "title": "Memory & Cognitive Issues",
+    "body": "Difficulty concentrating, memory lapses, confusion, or noticeable changes in thinking ability.",
+    "icon": "brain"
+  },
+  {
+    "title": "Seizures",
+    "body": "New-onset seizures with no prior history, or changes in existing seizure patterns.",
+    "icon": "zap"
+  },
+  {
+    "title": "Weakness or Numbness",
+    "body": "Weakness, numbness, or tingling in the arms or legs — particularly on one side of the body.",
+    "icon": "alert"
+  }
+]

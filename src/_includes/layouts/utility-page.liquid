@@ -1,0 +1,17 @@
+---
+layout: layouts/base.liquid
+---
+<section class="utility-hero">
+  <div class="container">
+    <h1>{{ pageHeading }}</h1>
+  </div>
+</section>
+<section class="section section--padded">
+  <div class="container narrow legal-content">
+    {% if content_include %}
+      {% include content_include %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+</section>

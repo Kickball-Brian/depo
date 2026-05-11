@@ -1,0 +1,16 @@
+{
+  "name": "Depo Claim Center",
+  "legalName": "Depo Claim Center",
+  "url": "https://staging.depoclaimcenter.com/",
+  "productionUrl": "https://depoclaimcenter.com/",
+  "description": "Did you use Depo-Provera and develop a meningioma? You may be entitled to significant compensation. Free case evaluation — no obligation.",
+  "email": "info@lawlogic.com",
+  "defaultPhone": "8776651553",
+  "defaultPhoneFormatted": "877-665-1553",
+  "address": {
+    "addressCountry": "US"
+  },
+  "areaServed": "United States",
+  "indexable": false,
+  "gtmId": ""
+}
