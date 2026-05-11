@@ -1,4 +1,7 @@
 /* Depo Claim Center — Design System
+   Includes: base, navbar, hero, stats, sections, awareness, steps,
+   symptoms, eligibility (Vue), FAQ (Vue), buttons, CTA, CCPA form,
+   thank-you, utility/legal pages, footer */
    Palette: deep navy + indigo/purple + warm amber
    Font: Inter (Google Fonts)
    Philosophy: premium medical-legal, elevated over standard tort sites */
@@ -867,6 +870,67 @@ p.lead { font-size: 1.05rem; color: var(--c-muted); line-height: 1.7; }
 }
 .legal-content p { color: #2a3242; }
 .legal-content a { color: var(--c-brand-light); }
+
+/* ── CCPA form ───────────────────────────────────── */
+.ccpa-form {
+  background: var(--c-alt);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 1.75rem;
+  margin: 2rem 0;
+}
+.ccpa-form fieldset { border: 0; padding: 0; margin: 0; }
+.ccpa-form legend {
+  font-weight: 700;
+  color: var(--c-brand);
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+}
+.ccpa-form_group {
+  margin: 1rem 0;
+  padding: .75rem;
+  background: #fff;
+  border-radius: var(--r-md);
+  border: 1px solid var(--c-line);
+}
+.ccpa-form_group legend { font-size: .95rem; }
+.ccpa-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--c-text);
+}
+.ccpa-form_group label { display: block; font-weight: 400; margin-bottom: .4rem; }
+.ccpa-form input[type=text],
+.ccpa-form input[type=email],
+.ccpa-form input[type=tel],
+.ccpa-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: .35rem;
+  padding: .6rem .85rem;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  font: inherit;
+  font-size: .975rem;
+  color: var(--c-text);
+  transition: border-color .2s;
+}
+.ccpa-form input:focus,
+.ccpa-form textarea:focus {
+  outline: none;
+  border-color: var(--c-brand-light);
+  box-shadow: 0 0 0 3px rgba(59,91,219,0.12);
+}
+.ccpa-form_consent {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  font-weight: 400;
+}
+.ccpa-form_consent input { margin-top: .25rem; flex-shrink: 0; }
+.ccpa-form_alt { color: var(--c-muted); font-size: .9rem; margin-top: 1rem; }
 
 /* ── Footer ──────────────────────────────────────── */
 .footer {

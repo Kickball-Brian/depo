@@ -1,0 +1,43 @@
+---
+layout: layouts/base.liquid
+title: "CCPA Request Webform | Depo Claim Center"
+description: "California residents — submit a CCPA request to access, delete, or opt out of the sale of your personal information."
+pageUrl: "https://depoclaimcenter.com/ccpa/"
+canonicalUrl: "https://depoclaimcenter.com/ccpa/"
+permalink: "/ccpa/index.html"
+bodyClass: "is-utility"
+---
+
+<section class="utility-hero">
+  <div class="container">
+    <h1>CCPA Request Webform</h1>
+  </div>
+</section>
+<section class="section section--padded">
+  <div class="container narrow legal-content">
+    {% include "content/ccpa.liquid" %}
+
+    <form class="ccpa-form" action="#" method="post" novalidate>
+      <fieldset>
+        <legend>Submit a CCPA Request</legend>
+        <label>Full name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Phone<input type="tel" name="phone"></label>
+        <label>California ZIP code<input type="text" name="zip" pattern="[0-9]{5}" required></label>
+        <fieldset class="ccpa-form_group">
+          <legend>Request type</legend>
+          <label><input type="radio" name="request" value="know" required> Right to know</label>
+          <label><input type="radio" name="request" value="delete"> Right to delete</label>
+          <label><input type="radio" name="request" value="opt-out"> Right to opt out of sale</label>
+        </fieldset>
+        <label>Additional details<textarea name="details" rows="4"></textarea></label>
+        <label class="ccpa-form_consent">
+          <input type="checkbox" name="verify" required>
+          I confirm I am a California resident and the information above is accurate.
+        </label>
+        <button type="submit" class="button">Submit Request</button>
+      </fieldset>
+    </form>
+    <p class="ccpa-form_alt">Or email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+</section>

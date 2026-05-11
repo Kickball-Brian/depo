@@ -1,0 +1,25 @@
+---
+layout: layouts/base.liquid
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.productionUrl }}" },
+    { "@type": "ListItem", "position": 2, "name": "{{ pageHeading }}", "item": "{{ site.productionUrl }}{{ page_slug }}/" }
+  ]
+}
+</script>
+
+<section class="utility-hero">
+  <div class="container">
+    <h1>{{ pageHeading }}</h1>
+  </div>
+</section>
+<section class="section section--padded">
+  <div class="container narrow legal-content">
+    {% if pageEffectiveDate %}<p class="legal-effective">Effective Date: {{ pageEffectiveDate }}</p>{% endif %}
+    {% include content_include %}
+  </div>
+</section>
