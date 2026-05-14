@@ -581,8 +581,14 @@ p.lead { font-size: 1.05rem; color: var(--c-muted); line-height: 1.7; }
   color: #fff;
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
   line-height: 1.4;
+}
+.elig-hint {
+  color: rgba(255,255,255,0.58);
+  font-size: .875rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
 }
 .elig-options { display: flex; flex-direction: column; gap: .75rem; }
 .elig-option {
@@ -809,6 +815,11 @@ p.lead { font-size: 1.05rem; color: var(--c-muted); line-height: 1.7; }
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+}
+.cta-block_legal {
+  margin-top: 1.25rem;
+  font-size: .85rem;
+  color: rgba(255,255,255,0.55);
 }
 @media (max-width: 540px) {
   .cta-block_actions { flex-direction: column; }
