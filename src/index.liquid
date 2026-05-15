@@ -49,13 +49,18 @@ pageSchema: |
         </li>
       </ul>
     </div>
-    <div class="hero_form" id="form">
-      <div class="hero_form_header">
-        <h2 class="hero_form_title">See If You Qualify</h2>
-        <p class="hero_form_sub">Takes less than 2 minutes. No cost, no obligation.</p>
+
+    {% comment %} IMAGE SLOT 1 — Hero (replace form). Recommended: woman/patient, warm, relatable. {% endcomment %}
+    <div class="hero_media">
+      <img src="/images/home/hero-feature.jpg"
+           alt="Woman speaking with a legal advisor"
+           loading="eager"
+           width="580" height="520"
+           onerror="this.parentElement.classList.add('hero_media--placeholder')">
+      <div class="hero_media_badge">
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="16" height="16"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Free &amp; Confidential
       </div>
-      <script src="/form.min.js?ver=1"></script>
-      <div id="ll-form"></div>
     </div>
   </div>
 </section>
@@ -72,9 +77,10 @@ pageSchema: |
       </div>
       <div class="stat-card reveal">
         <div class="stat-card_number">
-          <span class="stat-counter stat-counter--year" data-target="1992" data-end="2019" data-suffix="">0</span>
+          <span class="stat-counter" data-target="1992" data-suffix="">0</span>
+          <span class="stat-card_range">– 2019</span>
         </div>
-        <div class="stat-card_label">Qualifying years of Depo-Provera use<br>(1992 – 2019)</div>
+        <div class="stat-card_label">Qualifying years of Depo-Provera use</div>
       </div>
       <div class="stat-card reveal">
         <div class="stat-card_number">
@@ -90,11 +96,14 @@ pageSchema: |
 <section class="section section--padded">
   <div class="container">
     <div class="awareness-grid">
+
+      {% comment %} IMAGE SLOT 2 — Awareness (existing). Recommended: doctor/medical scan. {% endcomment %}
       <div class="awareness_media reveal">
         <div class="awareness_badge">Important Health Notice</div>
         <img src="/images/home/awareness.jpg" alt="Doctor reviewing a brain scan" loading="lazy" width="600" height="480"
              onerror="this.parentElement.classList.add('awareness_media--placeholder')">
       </div>
+
       <div class="awareness_copy reveal">
         <h2>What the Research Found About the Depo Shot</h2>
         <p class="lead">For decades, women got the Depo-Provera birth control shot without knowing it could cause brain tumors. New research has changed everything.</p>
@@ -113,8 +122,8 @@ pageSchema: |
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
             <div>
-              <strong>The FDA Took Action</strong>
-              <p>For nearly 30 years, women who used Depo-Provera were never warned about the risk of brain tumors. Women who used it before 2019 had no idea this risk existed.</p>
+              <strong>Women Were Never Warned</strong>
+              <p>For nearly 30 years, women who used Depo-Provera were never told about the risk of brain tumors. Women who used it before 2019 had no idea this risk existed.</p>
             </div>
           </div>
           <div class="awareness_point">
@@ -132,7 +141,7 @@ pageSchema: |
   </div>
 </section>
 
-{% comment %} ── Do You Qualify? (Vue eligibility checker) ── {% endcomment %}
+{% comment %} ── Do You Qualify? (Vue eligibility checker) — style documented in memory/eligibility-form-style.md ── {% endcomment %}
 <section class="section section--padded section--dark" id="eligibility">
   <div class="container">
     <div class="section_header reveal">
@@ -146,72 +155,103 @@ pageSchema: |
 {% comment %} ── How It Works ── {% endcomment %}
 <section class="section section--padded">
   <div class="container">
-    <div class="section_header reveal">
-      <h2 class="section_heading section_heading--center">How It Works</h2>
-      <p class="section_lead">Getting the money you deserve is simple. You don't pay anything to get started.</p>
+    <div class="how-it-works-grid">
+      <div class="how-it-works_media reveal">
+
+        {% comment %} IMAGE SLOT 3 — How It Works. Recommended: attorney/consultation, professional, relatable. {% endcomment %}
+        <img src="/images/home/consultation.jpg"
+             alt="Attorney meeting with a client"
+             loading="lazy"
+             width="560" height="600"
+             onerror="this.parentElement.classList.add('img-slot--placeholder')">
+        <div class="how-it-works_media_tag">No fees unless you win</div>
+      </div>
+      <div class="how-it-works_copy">
+        <div class="section_header reveal" style="text-align:left; margin-bottom:2rem;">
+          <h2 class="section_heading">How It Works</h2>
+          <p class="section_lead" style="margin:0; text-align:left;">Getting the money you deserve is simple. You don't pay anything to get started.</p>
+        </div>
+        <ol class="steps steps--vertical reveal">
+          <li class="step step--horizontal">
+            <div class="step_icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div>
+              <div class="step_number">Step 01</div>
+              <h3 class="step_title">Fill Out the Short Form</h3>
+              <p>Tell us a few basic things about your Depo use and your diagnosis. It takes about 2 minutes and costs nothing.</p>
+            </div>
+          </li>
+          <li class="step step--horizontal">
+            <div class="step_icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="step_number">Step 02</div>
+              <h3 class="step_title">We Review Your Case</h3>
+              <p>A lawyer who handles Depo-Provera cases will look at your information and reach out to you — usually within 24 hours.</p>
+            </div>
+          </li>
+          <li class="step step--horizontal">
+            <div class="step_icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="step_number">Step 03</div>
+              <h3 class="step_title">Get the Money You Deserve</h3>
+              <p>Your lawyer fights for you — handles all the paperwork, negotiations, and court filings. <strong>You pay nothing unless you win.</strong></p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
-    <ol class="steps reveal">
-      <li class="step">
-        <div class="step_icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        </div>
-        <div class="step_number">Step 01</div>
-        <h3 class="step_title">Fill Out the Short Form</h3>
-        <p>Tell us a few basic things about your Depo use and your diagnosis. It takes about 2 minutes and costs nothing.</p>
-      </li>
-      <li class="step">
-        <div class="step_icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
-        <div class="step_number">Step 02</div>
-        <h3 class="step_title">We Review Your Case</h3>
-        <p>A lawyer who handles Depo-Provera cases will look at your information and reach out to you — usually within 24 hours.</p>
-      </li>
-      <li class="step">
-        <div class="step_icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div class="step_number">Step 03</div>
-        <h3 class="step_title">Get the Money You Deserve</h3>
-        <p>Your lawyer fights for you — handles all the paperwork, negotiations, and court filings. <strong>You pay nothing unless you win.</strong></p>
-      </li>
-    </ol>
   </div>
 </section>
 
-{% comment %} ── Signs & Symptoms ── {% endcomment %}
+{% comment %} ── Treatment Types (replaces symptoms) ── {% endcomment %}
 <section class="section section--padded section--alt">
   <div class="container">
-    <div class="section_header reveal">
-      <h2 class="section_heading section_heading--center">Signs of a Brain Tumor (Meningioma)</h2>
-      <p class="section_lead">Meningiomas can grow slowly, so symptoms may take years to show up. If you used Depo-Provera and have any of these signs, talk to a doctor right away.</p>
+
+    {% comment %} IMAGE SLOT 4 — Treatment Types. Recommended: MRI machine, hospital, or clinical setting. {% endcomment %}
+    <div class="treatment-banner reveal">
+      <img src="/images/home/treatment.jpg"
+           alt="Medical professional reviewing brain imaging"
+           loading="lazy"
+           width="1200" height="380"
+           onerror="this.parentElement.classList.add('treatment-banner--placeholder')">
+      <div class="treatment-banner_overlay">
+        <h2 class="treatment-banner_heading">Treatment Types for a Brain Tumor (Meningioma)</h2>
+        <p class="treatment-banner_sub">A meningioma diagnosis often leads to serious, life-changing treatment. If Depo-Provera caused your tumor, you may be owed money for what you have been through.</p>
+      </div>
     </div>
-    <div class="symptoms-grid">
-      {% for s in symptoms %}
-      <div class="symptom-card reveal">
-        <div class="symptom-card_icon" aria-hidden="true">
-          {% if s.icon == "head" %}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          {% elsif s.icon == "eye" %}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-          {% elsif s.icon == "ear" %}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
-          {% elsif s.icon == "brain" %}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          {% elsif s.icon == "zap" %}
+
+    <div class="treatment-grid">
+      {% for t in treatments %}
+      <div class="treatment-card reveal">
+        <div class="treatment-card_icon" aria-hidden="true">
+          {% if t.icon == "scalpel" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21l10-18M7 3l4 4m2 2l4 4"/></svg>
+          {% elsif t.icon == "radiation" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          {% elsif t.icon == "zap" %}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          {% elsif t.icon == "eye" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          {% elsif t.icon == "scan" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
           {% else %}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           {% endif %}
         </div>
-        <h3 class="symptom-card_title">{{ s.title }}</h3>
-        <p class="symptom-card_body">{{ s.body }}</p>
+        <h3 class="treatment-card_title">{{ t.title }}</h3>
+        <p class="treatment-card_body">{{ t.body }}</p>
       </div>
       {% endfor %}
     </div>
-    <div class="symptoms_cta reveal">
-      <p>Have you experienced these symptoms after using Depo-Provera? You may have a claim.</p>
-      <a href="#form" class="button button--lg">Get a Free Case Review</a>
+
+    <div class="treatment-cta reveal">
+      <p>If Depo-Provera led to your diagnosis and treatment, you may be owed compensation.</p>
+      <a href="#eligibility" class="button button--lg">See If You Qualify</a>
     </div>
   </div>
 </section>
@@ -234,7 +274,7 @@ pageSchema: |
       <h2>There Are Deadlines — Don't Wait</h2>
       <p>Each state limits how long you have to file a claim. If you used Depo-Provera and were diagnosed with a brain tumor, the clock may already be ticking. A free review takes 2 minutes and costs you nothing.</p>
       <div class="cta-block_actions">
-        <a href="#form" class="button button--lg button--gold">Start My Free Case Review</a>
+        <a href="#eligibility" class="button button--lg button--gold">Start My Free Case Review</a>
         <a href="tel:+1{{ site.defaultPhone }}" class="button button--lg button--outline" data-dynamic-phone-tel>
           Call <span data-dynamic-phone>{{ site.defaultPhoneFormatted }}</span>
         </a>

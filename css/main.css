@@ -341,6 +341,16 @@ h4 { font-size: 1rem; font-weight: 700; }
   line-height: 1;
   margin-bottom: .75rem;
 }
+.stat-card_range {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #F59F00 0%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
 .stat-card_label {
   color: rgba(255,255,255,0.82);
   font-size: .9rem;
@@ -878,6 +888,188 @@ p.lead { font-size: 1.05rem; color: var(--c-muted); line-height: 1.7; }
 }
 .legal-content p { color: #2a3242; }
 .legal-content a { color: var(--c-brand-light); }
+
+/* ── Hero media (image replaces form) ───────────── */
+.hero_media {
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  align-self: stretch;
+  min-height: 380px;
+}
+.hero_media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero_media--placeholder {
+  background: linear-gradient(135deg, rgba(59,91,219,0.35), rgba(123,47,190,0.35));
+  display: flex; align-items: center; justify-content: center;
+}
+.hero_media_badge {
+  position: absolute;
+  bottom: 1.25rem; left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(11,29,58,0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .4rem .85rem;
+  border-radius: var(--r-full);
+}
+
+/* ── How It Works — split layout ─────────────────── */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.how-it-works_media {
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 420px;
+  background: linear-gradient(135deg, var(--c-alt), #E0E7FF);
+}
+.how-it-works_media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.img-slot--placeholder {
+  display: flex; align-items: center; justify-content: center;
+}
+.how-it-works_media_tag {
+  position: absolute;
+  bottom: 1.25rem; right: 1.25rem;
+  background: var(--c-gold);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: .4rem .9rem;
+  border-radius: var(--r-full);
+}
+
+/* Steps — vertical variant for How It Works split layout */
+.steps--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.step--horizontal {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+}
+.step--horizontal::before { display: none; }
+.step--horizontal .step_icon { flex-shrink: 0; margin-bottom: 0; }
+.step--horizontal h3 { margin-bottom: .35rem; }
+.step--horizontal p { margin: 0; }
+
+@media (max-width: 860px) {
+  .how-it-works-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .how-it-works_media { min-height: 280px; }
+}
+
+/* ── Treatment banner + grid ─────────────────────── */
+.treatment-banner {
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  min-height: 260px;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-purple) 100%);
+  box-shadow: var(--shadow-md);
+}
+.treatment-banner img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.35;
+  position: absolute;
+  inset: 0;
+}
+.treatment-banner--placeholder img { display: none; }
+.treatment-banner_overlay {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  color: #fff;
+}
+.treatment-banner_heading {
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 0 .6rem;
+}
+.treatment-banner_sub {
+  color: rgba(255,255,255,0.82);
+  font-size: 1rem;
+  max-width: 660px;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.treatment-card {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow .25s var(--ease), transform .25s var(--ease), border-color .25s;
+}
+.treatment-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--c-brand-light);
+}
+.treatment-card_icon {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--c-brand-light);
+}
+.treatment-card_icon svg { width: 22px; height: 22px; }
+.treatment-card_title { font-size: 1rem; font-weight: 700; color: var(--c-brand); margin: 0 0 .5rem; }
+.treatment-card_body { font-size: .9rem; color: var(--c-muted); margin: 0; line-height: 1.6; }
+
+.treatment-cta {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+  border-radius: var(--r-xl);
+  border: 1px solid #C7D2FE;
+}
+.treatment-cta p { color: var(--c-brand); font-weight: 600; font-size: 1.05rem; margin-bottom: 1rem; }
+
+@media (max-width: 860px) {
+  .treatment-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .treatment-grid { grid-template-columns: 1fr; }
+}
 
 /* ── CCPA form ───────────────────────────────────── */
 .ccpa-form {

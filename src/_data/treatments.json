@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Surgery (Craniotomy)",
+    "body": "A surgeon opens the skull to remove some or all of the tumor. This is the most common treatment when a meningioma is growing, large, or causing symptoms. Many patients recover well after surgery.",
+    "icon": "scalpel"
+  },
+  {
+    "title": "Stereotactic Radiosurgery",
+    "body": "A precise form of radiation — like Gamma Knife or CyberKnife — that targets the tumor without cutting. It is often used when the tumor is small or in a hard-to-reach area of the brain.",
+    "icon": "radiation"
+  },
+  {
+    "title": "Radiation Therapy",
+    "body": "Focused beams of high-energy radiation are used to shrink the tumor or stop it from growing. It is often used after surgery if the whole tumor could not be removed.",
+    "icon": "zap"
+  },
+  {
+    "title": "Watchful Waiting",
+    "body": "If the tumor is small and not causing symptoms, doctors may monitor it with regular MRI scans instead of treating it right away. This approach is common for slow-growing meningiomas.",
+    "icon": "eye"
+  },
+  {
+    "title": "MRI Monitoring",
+    "body": "Regular brain imaging scans help doctors track the size and growth of the tumor over time — whether before treatment, after surgery, or as part of a watchful waiting plan.",
+    "icon": "scan"
+  },
+  {
+    "title": "Medication & Hormone Therapy",
+    "body": "Some medications may help control symptoms like swelling or seizures. Because meningiomas can be hormone-sensitive, hormone therapy is sometimes explored as part of treatment.",
+    "icon": "pill"
+  }
+]
