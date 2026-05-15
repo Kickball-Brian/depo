@@ -22,8 +22,12 @@ pageSchema: |
 {% comment %} ── Hero ── {% endcomment %}
 <section class="hero" id="hero-container">
   <div class="hero_bg">
-    <img class="hero_image" src="/images/home/hero-bg.jpg" alt="" aria-hidden="true" fetchpriority="high"
-         onerror="this.parentElement.style.background='linear-gradient(135deg,#0B1D3A 0%,#2D1B69 100%)'">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="/images/home/hero-bg-lg.webp" type="image/webp">
+      <source media="(min-width: 640px)"  srcset="/images/home/hero-bg-md.webp" type="image/webp">
+      <img class="hero_image" src="/images/home/hero-bg-m.webp" alt="" aria-hidden="true" fetchpriority="high"
+           onerror="this.parentElement.style.background='linear-gradient(135deg,#0B1D3A 0%,#2D1B69 100%)'">
+    </picture>
     <div class="hero_overlay"></div>
   </div>
   <div class="container hero_inner">
